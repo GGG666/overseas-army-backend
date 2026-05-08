@@ -1,35 +1,31 @@
--- 院校数据
-INSERT INTO university (name_cn, name_en, country, rank, location, website) VALUES
-('University of Oxford', 'Oxford', 'UK', 1, 'Oxford', 'www.ox.ac.uk'),
-('University of Cambridge', 'Cambridge', 'UK', 2, 'Cambridge', 'www.cam.ac.uk'),
-('Imperial College London', 'Imperial', 'UK', 3, 'London', 'www.imperial.ac.uk'),
-('UCL', 'UCL', 'UK', 4, 'London', 'www.ucl.ac.uk'),
-('University of Edinburgh', 'Edinburgh', 'UK', 5, 'Edinburgh', 'www.ed.ac.uk'),
-('University of Manchester', 'Manchester', 'UK', 6, 'Manchester', 'www.manchester.ac.uk'),
-('King''s College London', 'KCL', 'UK', 7, 'London', 'www.kcl.ac.uk'),
-('The University of Hong Kong', 'HKU', 'HK', 1, 'Hong Kong', 'www.hku.hk'),
-('CUHK', 'CUHK', 'HK', 2, 'Hong Kong', 'www.cuhk.edu.hk'),
-('HKUST', 'HKUST', 'HK', 3, 'Hong Kong', 'www.hkust.edu.hk'),
-('CityU', 'CityU', 'HK', 4, 'Hong Kong', 'www.cityu.edu.hk'),
-('ANU', 'ANU', 'AU', 1, 'Canberra', 'www.anu.edu.au'),
-('University of Melbourne', 'Melbourne', 'AU', 2, 'Melbourne', 'www.unimelb.edu.au'),
-('University of Sydney', 'Sydney', 'AU', 3, 'Sydney', 'www.sydney.edu.au'),
-('UNSW', 'UNSW', 'AU', 4, 'Sydney', 'www.unsw.edu.au'),
-('UQ', 'UQ', 'AU', 5, 'Brisbane', 'www.uq.edu.au'),
-('NUS', 'NUS', 'SG', 1, 'Singapore', 'www.nus.edu.sg'),
-('NTU', 'NTU', 'SG', 2, 'Singapore', 'www.ntu.edu.sg');
+-- 院校数据（完整字段）
+INSERT INTO university (name_cn, name_en, country, rank, logo_url, location, website, background_image, school_type, establish_year, student_num, international_ratio, description, admission_requirement, tuition_range, scholarship_desc, famous_alumni, ranking_info) VALUES
+('University of Oxford', 'Oxford', 'UK', 1, 'https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Oxford-University-Circa-1900.jpg/220px-Oxford-University-Circa-1900.jpg', 'Oxford', 'www.ox.ac.uk', 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800', '综合类', '1096', '24000', '45%', '牛津大学是英语国家历史最悠久的大学，至今已培养出72位诺贝尔奖得主、3位菲尔兹奖得主以及苏格拉底、培根、拜伦等无数著名人物。', '985/211背景，GPA 3.5+，IELTS 7.0+', '£30,000-£50,000/年', '中国留学生可申请系奖学金，金额£5,000-£20,000不等', '撒切尔夫人、卡梅伦、霍金', 'QS世界排名第1（2024），Times英国排名第1'),
+('University of Cambridge', 'Cambridge', 'UK', 2, 'https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Kings-college-cam.jpg/220px-Kings-college-cam.jpg', 'Cambridge', 'www.cam.ac.uk', 'https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=800', '综合类', '1209', '22000', '40%', '剑桥大学是世界上历史最悠久的大学之一，以其卓越的学术成就享誉全球。', '985/211背景，GPA 3.6+，IELTS 7.0+', '£32,000-£55,000/年', '研究生奖学金覆盖率约30%，金额£5,000-£25,000', '牛顿、达尔文、金庸', 'QS世界排名第2（2024），Times英国排名第2'),
+('Imperial College London', 'Imperial', 'UK', 3, 'https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Imperial_College_London.jpg/220px-Imperial_College_London.jpg', 'London', 'www.imperial.ac.uk', 'https://images.unsplash.com/photo-1559742811-822873691df8?w=800', '理工类', '1907', '19000', '55%', '帝国理工学院是英国顶尖的理工科大学，在工程、医学和商学领域享有极高声誉。', '211/985背景，GPA 3.3+，IELTS 6.5+', '£35,000-£50,000/年', '理工科奖学金丰富，中国学生可申请校长奖学金', '亚历山大·弗莱明、诺贝尔奖得主若干', 'QS世界排名第6（2024），英国排名第3'),
+('University College London', 'UCL', 'UK', 4, 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/University_College_London.jpg/220px-University_College_London.jpg', 'London', 'www.ucl.ac.uk', 'https://images.unsplash.com/photo-1565018054866-968d574d18a1?w=800', '综合类', '1826', '42000', '50%', '伦敦大学学院是英国最古老的大学之一，在多个学科领域位列世界前十。', 'GPA 3.3+，IELTS 6.5+', '£25,000-£45,000/年', 'UCL Global Scholarship，覆盖学费和生活费', '高锟、伏明霞', 'QS世界排名第9（2024），英国排名第4'),
+('University of Edinburgh', 'Edinburgh', 'UK', 5, 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Edinburgh_University_Building.jpg/220px-Edinburgh_University_Building.jpg', 'Edinburgh', 'www.ed.ac.uk', 'https://images.unsplash.com/photo-1562774053-701939374585?w=800', '综合类', '1583', '32000', '38%', '爱丁堡大学是苏格兰最古老的大学，拥有世界领先的研究水平。', '211/985背景，GPA 3.3+，IELTS 6.5+', '£22,000-£38,000/年', 'Graduate scholarship 开放申请，金额£1,000-£10,000', '达尔文、丘吉尔、钟南山', 'QS世界排名第15（2024），英国排名第5'),
+('The University of Hong Kong', 'HKU', 'HK', 1, 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/HKU_Composite_Logo.svg/220px-HKU_Composite_Logo.svg.png', 'Hong Kong', 'www.hku.hk', 'https://images.unsplash.com/photo-1565977219139-8e53d6d7931e?w=800', '综合类', '1911', '27000', '42%', '香港大学是香港历史最悠久的大学，QS亚洲排名第4。', '985/211优先，GPA 3.5+，IELTS 6.5+', 'HK$182,000-£220,000/年', '入学奖学金最高覆盖全额学费', '孙中山、张爱玲、何鸿燊', 'QS世界排名第21（2024），亚洲排名第4'),
+('The Chinese University of Hong Kong', 'CUHK', 'HK', 2, 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/CUHK_Emblem.svg/220px-CUHK_Emblem.svg.png', 'Hong Kong', 'www.cuhk.edu.hk', 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=800', '综合类', '1963', '20000', '38%', '香港中文大学是一所研究型综合大学，在人文学科和商科领域享有盛名。', 'GPA 3.3+，IELTS 6.5+', 'HK$145,000-200,000/年', '入学奖学金自动发放，无需申请', '金庸、丘成桐', 'QS世界排名第47（2024），亚洲排名第11'),
+('Hong Kong University of Science and Technology', 'HKUST', 'HK', 3, 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/HKUST_Campus_Aerial_View.jpg/220px-HKUST_Campus_Aerial_View.jpg', 'Hong Kong', 'www.hkust.edu.hk', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800', '理工类', '1991', '16000', '35%', '香港科技大学是香港最年轻的大学，在工程和商学领域世界领先。', '211/985优先，GPA 3.5+，IELTS 6.5+', 'HK$180,000-220,000/年', 'HKUST scholarships 覆盖学费和生活费', '马化腾', 'QS世界排名第62（2024），亚洲排名第14'),
+('City University of Hong Kong', 'CityU', 'HK', 4, 'https://upload.wikimedia.org/wikipedia/en/thumb/5/53/City_University_of_Hong_Kong_Logo.svg/220px-City_University_of_Hong_Kong_Logo.svg.png', 'Hong Kong', 'www.cityu.edu.hk', 'https://images.unsplash.com/photo-1498243691551-c5d14f8d5e8b?w=800', '综合类', '1984', '18000', '30%', '香港城市大学在工程、商学和社会科学领域表现突出。', 'GPA 3.0+，IELTS 6.5+', 'HK$140,000-180,000/年', '入学奖学金最高HK$100,000', '张靓颖', 'QS世界排名第70（2024），亚洲排名第16'),
+('Australian National University', 'ANU', 'AU', 1, 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Australian_National_University_logo.svg/220px-Australian_National_University_logo.svg.png', 'Canberra', 'www.anu.edu.au', 'https://images.unsplash.com/photo-1521295124083-8c15a2f6c1e8?w=800', '综合类', '1946', '22000', '40%', '澳大利亚国立大学是澳大利亚排名第一的研究型大学，在人文社科和自然科学领域世界领先。', '211/985背景，GPA 3.3+，IELTS 6.5+', 'AUD 40,000-50,000/年', 'ANU College Scholarship 覆盖学费和生活费', '诺贝尔奖得主若干', 'QS世界排名第30（2024），澳洲排名第1'),
+('University of Melbourne', 'Melbourne', 'AU', 2, 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/University_of_Melbourne_Logo.svg/220px-University_of_Melbourne_Logo.svg.png', 'Melbourne', 'www.unimelb.edu.au', 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=800', '综合类', '1853', '50000', '38%', '墨尔本大学是澳大利亚历史第二悠久的大学，培养了8位诺贝尔奖得主。', '985/211背景，GPA 3.5+，IELTS 6.5+', 'AUD 38,000-55,000/年', '国际学生奖学金，金额AUD 5,000-25,000', '孙中山、费德勒', 'QS世界排名第33（2024），澳洲排名第2'),
+('University of Sydney', 'Sydney', 'AU', 3, 'https://upload.wikimedia.org/wikipedia/en/thumb/3/37/University_of_Sydney_Logo.svg/220px-University_of_Sydney_Logo.svg.png', 'Sydney', 'www.sydney.edu.au', 'https://images.unsplash.com/photo-1520499690082-9eab66629ed5?w=800', '综合类', '1850', '65000', '35%', '悉尼大学是澳大利亚历史最悠久的大学，拥有澳大利亚最大的大学图书馆。', 'GPA 3.3+，IELTS 6.5+', 'AUD 35,000-50,000/年', 'Vice Chancellor Scholarship 覆盖全额学费+生活费', '俞可平', 'QS世界排名第41（2024），澳洲排名第3'),
+('National University of Singapore', 'NUS', 'SG', 1, 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/NUS_Logo.svg/220px-NUS_Logo.svg.png', 'Singapore', 'www.nus.edu.sg', 'https://images.unsplash.com/photo-1565623833408-d77e39b88af8?w=800', '综合类', '1905', '42000', '42%', '新加坡国立大学是新加坡历史最悠久的大学，QS亚洲排名第1。', '985/211背景，GPA 3.5+，IELTS 6.5+', 'SGD 35,000-50,000/年', 'NUS Research Scholarship 覆盖学费+生活费SGD 2,000/月', '吴作栋、陈敏轩', 'QS世界排名第8（2024），亚洲排名第1'),
+('Nanyang Technological University', 'NTU', 'SG', 2, 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/NTU_Logo.svg/220px-NTU_Logo.svg.png', 'Singapore', 'www.ntu.edu.sg', 'https://images.unsplash.com/photo-1565623819679-0df466e6b78c?w=800', '理工类', '1955', '33000', '38%', '南洋理工大学是新加坡著名的研究型大学，在工程和商学领域世界领先。', '211/985背景，GPA 3.3+，IELTS 6.5+', 'SGD 32,000-45,000/年', 'NTU Scholarship 自动评估，最高覆盖全额', '吴亚军', 'QS世界排名第26（2024），亚洲排名第3');
 
 -- 专业数据
-INSERT INTO major (university_id, name_cn, name_en, degree_type, duration, tuition, language_req, academic_req, deadline) VALUES
-(1, 'MSc Computer Science', 'Computer Science', 'Master', '1 year', 35000, 'IELTS 7.0', 'GPA 3.5', '2024-01-15'),
-(1, 'MSc Finance', 'Finance', 'Master', '1 year', 38000, 'IELTS 7.0', 'GPA 3.5', '2024-01-15'),
-(1, 'MSc Artificial Intelligence', 'AI', 'Master', '1 year', 36000, 'IELTS 7.0', 'GPA 3.5', '2024-01-15'),
-(2, 'MPhil Computer Science', 'Computer Science', 'Master', '2 years', 25000, 'IELTS 7.0', 'GPA 3.5', '2024-01-31'),
-(3, 'MSc Finance', 'Finance', 'Master', '1 year', 35000, 'IELTS 7.0', 'GPA 3.3', '2024-03-01'),
-(3, 'MSc Business Analytics', 'Business Analytics', 'Master', '1 year', 34000, 'IELTS 7.0', 'GPA 3.3', '2024-03-01'),
-(8, 'Master of Finance', 'Finance', 'Master', '1 year', 24000, 'IELTS 6.5', 'GPA 3.0', '2024-02-28'),
-(8, 'Master of Business Analytics', 'Business Analytics', 'Master', '1 year', 22000, 'IELTS 6.5', 'GPA 3.0', '2024-02-28'),
-(12, 'Master of Computing', 'Computing', 'Master', '2 years', 50000, 'IELTS 6.5', 'GPA 3.0', '2024-03-15'),
-(12, 'Master of Data Science', 'Data Science', 'Master', '2 years', 48000, 'IELTS 6.5', 'GPA 3.0', '2024-03-15'),
-(17, 'MSc Computer Science', 'Computer Science', 'Master', '1.5 years', 45000, 'IELTS 6.5', 'GPA 3.0', '2024-02-01'),
-(17, 'MSc Finance', 'Finance', 'Master', '1.5 years', 42000, 'IELTS 6.5', 'GPA 3.0', '2024-02-01');
+INSERT INTO major (university_id, name_cn, name_en, degree_type, duration, tuition, language_req, academic_req, deadline, description, career_prospect, employment_rate) VALUES
+(1, '计算机科学理学硕士', 'MSc Computer Science', 'Master', '1年', 35000, 'IELTS 7.0', 'GPA 3.5', '2024-01-15', '牛津大学计算机科学硕士项目涵盖算法、人工智能、软件工程等领域。', 'Google, Microsoft, Amazon 等科技公司', '95%'),
+(1, '金融经济学硕士', 'MSc Finance and Economics', 'Master', '1年', 38000, 'IELTS 7.0', 'GPA 3.5', '2024-01-15', '专注于金融理论和经济分析，适合想要进入金融行业的学生。', '投资银行、咨询公司', '92%'),
+(1, '人工智能理学硕士', 'MSc Artificial Intelligence', 'Master', '1年', 36000, 'IELTS 7.0', 'GPA 3.5', '2024-01-15', '学习AI基础理论、机器学习、深度学习等前沿技术。', 'AI研究员、算法工程师', '97%'),
+(2, '计算机科学研究型硕士', 'MPhil Computer Science', 'Master', '2年', 25000, 'IELTS 7.0', 'GPA 3.6', '2024-01-31', '剑桥大学计算机科学研究型硕士，适合有志于学术研究的学生。', '学术研究、AI研究', '94%'),
+(3, '金融学理学硕士', 'MSc Finance', 'Master', '1年', 35000, 'IELTS 7.0', 'GPA 3.3', '2024-03-01', '帝国理工学院金融硕士项目在英国排名第一。', '投行、资产管理', '93%'),
+(3, '商业分析理学硕士', 'MSc Business Analytics', 'Master', '1年', 34000, 'IELTS 7.0', 'GPA 3.3', '2024-03-01', '学习数据分析和商业决策，培养数据驱动思维。', '数据分析师、咨询顾问', '95%'),
+(6, '金融学硕士', 'Master of Finance', 'Master', '1年', 24000, 'IELTS 6.5', 'GPA 3.0', '2024-02-28', '香港大学金融硕士，亚洲金融中心优势。', '香港金融业、投行', '90%'),
+(6, '商业分析理学硕士', 'Master of Business Analytics', 'Master', '1年', 22000, 'IELTS 6.5', 'GPA 3.0', '2024-02-28', '学习数据分析技术，解决商业问题。', '数据分析师、产品经理', '92%'),
+(8, '计算机学硕士', 'Master of Computing', 'Master', '2年', 50000, 'IELTS 6.5', 'GPA 3.0', '2024-03-15', '香港科技大学计算机硕士，适合转专业学生。', '科技公司、互联网', '94%'),
+(8, '数据科学理学硕士', 'Master of Data Science', 'Master', '2年', 48000, 'IELTS 6.5', 'GPA 3.0', '2024-03-15', '学习数据科学核心技能，包括统计和机器学习。', '数据科学家、AI工程师', '96%'),
+(13, '计算机科学理学硕士', 'MSc Computer Science', 'Master', '1.5年', 45000, 'IELTS 6.5', 'GPA 3.0', '2024-02-01', 'NUS计算机硕士，亚洲顶尖项目。', '科技公司、研究机构', '95%'),
+(13, '金融学理学硕士', 'MSc Finance', 'Master', '1.5年', 42000, 'IELTS 6.5', 'GPA 3.0', '2024-02-01', 'NUS金融硕士，新加坡金融中心优势。', '银行、资产管理', '91%');

@@ -15,8 +15,8 @@ public class UniversityService {
         return universityRepository.findAll();
     }
 
-    public List<University> findByCountry(String country) {
-        return universityRepository.findByCountryOrderByRankAsc(country);
+    public List<University> search(String country, String search) {
+        return universityRepository.search(country, search);
     }
 
     public University findById(Long id) {

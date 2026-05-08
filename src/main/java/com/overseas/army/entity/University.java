@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "university")
@@ -35,4 +36,37 @@ public class University {
 
     @Column(length = 200)
     private String website;
+
+    @Column(name = "background_image", length = 500)
+    private String backgroundImage;
+
+    @Column(name = "school_type", length = 20)
+    private String schoolType;
+
+    @Column(name = "establish_year", length = 10)
+    private String establishYear;
+
+    @Column(name = "student_num", length = 20)
+    private String studentNum;
+
+    @Column(name = "international_ratio", length = 20)
+    private String internationalRatio;
+
+    @Column(name = "description", columnDefinition = "TEXT")
+    private String description;
+
+    @Column(name = "admission_requirement", columnDefinition = "TEXT")
+    private String admissionRequirement;
+
+    @Column(name = "tuition_range", length = 100)
+    private String tuitionRange;
+
+    @Column(name = "scholarship_desc", length = 500)
+    private String scholarshipDesc;
+
+    @Column(name = "famous_alumni", columnDefinition = "TEXT")
+    private String famousAlumni;
+
+    @Column(name = "ranking_info", length = 500)
+    private String rankingInfo;
 }

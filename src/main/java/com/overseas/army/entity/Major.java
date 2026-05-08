@@ -42,4 +42,16 @@ public class Major {
 
     @Column(length = 50)
     private String deadline;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(name = "career_prospect", length = 500)
+    private String careerProspect;
+
+    @Column(name = "employment_rate", length = 20)
+    private String employmentRate;
+
+    @Column(name = "tuition_unit", length = 20)
+    private String tuitionUnit;
 }
