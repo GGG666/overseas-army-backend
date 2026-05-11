@@ -1,7 +1,7 @@
 package com.overseas.army.service;
 
 import com.overseas.army.entity.University;
-import com.overseas.army.repository.UniversityRepository;
+import com.overseas.army.mapper.UniversityMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -9,17 +9,21 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UniversityService {
-    private final UniversityRepository universityRepository;
+    private final UniversityMapper universityMapper;
 
     public List<University> findAll() {
-        return universityRepository.findAll();
+        return universityMapper.findAll();
     }
 
     public List<University> search(String country, String search) {
-        return universityRepository.search(country, search);
+        return universityMapper.search(country, search);
     }
 
     public University findById(Long id) {
-        return universityRepository.findById(id).orElse(null);
+        return universityMapper.findById(id);
+    }
+
+    public List<University> findByCountry(String country) {
+        return universityMapper.findByCountry(country);
     }
 }

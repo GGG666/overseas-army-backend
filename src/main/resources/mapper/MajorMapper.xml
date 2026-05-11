@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.overseas.army.mapper.MajorMapper">
+    <resultMap id="BaseResultMap" type="com.overseas.army.entity.Major">
+        <id column="id" property="id"/>
+        <result column="university_id" property="universityId"/>
+        <result column="name_cn" property="nameCn"/>
+        <result column="name_en" property="nameEn"/>
+        <result column="degree_type" property="degreeType"/>
+        <result column="duration" property="duration"/>
+        <result column="tuition" property="tuition"/>
+        <result column="language_req" property="languageReq"/>
+        <result column="academic_req" property="academicReq"/>
+        <result column="deadline" property="deadline"/>
+        <result column="description" property="description"/>
+        <result column="career_prospect" property="careerProspect"/>
+        <result column="employment_rate" property="employmentRate"/>
+        <result column="tuition_unit" property="tuitionUnit"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT * FROM major
+    </select>
+
+    <select id="findByUniversityId" resultMap="BaseResultMap">
+        SELECT * FROM major WHERE university_id = #{universityId}
+    </select>
+
+    <select id="findByUniversityIdAndDegreeType" resultMap="BaseResultMap">
+        SELECT * FROM major WHERE university_id = #{universityId} AND degree_type = #{degreeType}
+    </select>
+
+    <select id="findById" resultMap="BaseResultMap">
+        SELECT * FROM major WHERE id = #{id}
+    </select>
+</mapper>

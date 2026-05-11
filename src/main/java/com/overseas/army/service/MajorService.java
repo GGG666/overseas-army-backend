@@ -1,7 +1,7 @@
 package com.overseas.army.service;
 
 import com.overseas.army.entity.Major;
-import com.overseas.army.repository.MajorRepository;
+import com.overseas.army.mapper.MajorMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -9,21 +9,21 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MajorService {
-    private final MajorRepository majorRepository;
+    private final MajorMapper majorMapper;
 
     public List<Major> findAll() {
-        return majorRepository.findAll();
+        return majorMapper.findAll();
     }
 
     public List<Major> findByUniversityId(Long universityId) {
-        return majorRepository.findByUniversityId(universityId);
+        return majorMapper.findByUniversityId(universityId);
     }
 
     public List<Major> findByUniversityIdAndDegreeType(Long universityId, String degreeType) {
-        return majorRepository.findByUniversityIdAndDegreeType(universityId, degreeType);
+        return majorMapper.findByUniversityIdAndDegreeType(universityId, degreeType);
     }
 
     public Major findById(Long id) {
-        return majorRepository.findById(id).orElse(null);
+        return majorMapper.findById(id);
     }
 }

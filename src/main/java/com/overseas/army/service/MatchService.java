@@ -4,40 +4,39 @@ import com.overseas.army.dto.MatchRequest;
 import com.overseas.army.dto.MatchResult;
 import com.overseas.army.entity.Major;
 import com.overseas.army.entity.University;
-import com.overseas.army.repository.MajorRepository;
-import com.overseas.army.repository.UniversityRepository;
+import com.overseas.army.mapper.MajorMapper;
+import com.overseas.army.mapper.UniversityMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class MatchService {
-    private final UniversityRepository universityRepository;
-    private final MajorRepository majorRepository;
+    private final UniversityMapper universityMapper;
+    private final MajorMapper majorMapper;
 
     public List<MatchResult> match(MatchRequest request) {
-        List<University> universities = universityRepository.findAll();
+        List<University> universities = universityMapper.findAll();
         if (request.getCountry() != null && !request.getCountry().isEmpty()) {
             universities = universities.stream()
                     .filter(u -> u.getCountry().equals(request.getCountry()))
-                    .collect(Collectors.toList());
+                    .toList();
         }
 
         List<MatchResult> results = new ArrayList<>();
         for (University university : universities) {
-            List<Major> majors = majorRepository.findByUniversityId(university.getId());
+            List<Major> majors = majorMapper.findByUniversityId(university.getId());
             if (request.getDegreeType() != null && !request.getDegreeType().isEmpty()) {
                 majors = majors.stream()
                         .filter(m -> m.getDegreeType().equals(request.getDegreeType()))
-                        .collect(Collectors.toList());
+                        .toList();
             }
             if (request.getMinGpa() != null) {
                 majors = majors.stream()
                         .filter(m -> parseGpa(m.getAcademicReq()) >= request.getMinGpa())
-                        .collect(Collectors.toList());
+                        .toList();
             }
 
             if (!majors.isEmpty()) {
